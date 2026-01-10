@@ -1,4 +1,4 @@
-# One HP Life
+# 1-Stat Survivor
 
 **HP/Stamina/FP locked to 1.** One mistake and you're dead. Made for people who hate themselves.
 
