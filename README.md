@@ -1,41 +1,66 @@
-# 1-Stat Survivor
+# Fragile Tarnished
 
-**HP/Stamina/FP locked to 1.** One mistake and you're dead. Made for people who hate themselves.
+A lightweight C++ DLL mod for **Elden Ring** that implements a very hard challenge mode. The player has 1 HP, FP, & SP
+
+[![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
+[![CMake](https://img.shields.io/badge/CMake-Build-green.svg)](https://cmake.org/)
+
+## Warning
+**Do not use this mod while playing online.** Elden Ring uses Easy Anti-Cheat (EAC). Using mods while connected to FromSoftware's servers will result in a ban. Always play in **Offline Mode** with EAC disabled.
 
 ## Features
-- All 3 stats permanently maxed at 1
-- Overrides estus, talismans, buffs, vigor
-- Works after death/NG+/level up
-- 20ms enforcement loop
-- Shadow of the Erdtree compatible
+- **All 3 stats permanently maxed at 1**
+- **Customizeable** *(compile with commented out stats for different results)*
 
-## Requirements
-- elden ring 1.16+
-- mod engine 2 (or elden mod loader)
-- EAC disabled (offline only)
-- windows x64
+## Prerequisites
+To build this project, you will need:
+- **Visual Studio 2022** (with "Desktop development with C++" workload)
+- **CMake 3.20** or higher
+- **Windows SDK** (10.0.xxxxx)
+
+## Building from Source
+1. Clone the repository:
+   ```powershell
+   git clone https://github.com/RegularLunar/Fragile-Tarnished.git
+   cd Fragile-Tarnished
+   ```
+2. Configure the project:
+   ```powershell
+   cmake -B build -S . -A x64
+   ```
+3. Build the DLL:
+   ```powershell
+   cmake --build build --config Release
+   ```
+The compiled `FragileTarnished.dll` will be located in the `build/Release` folder.
 
 ## Installation
-- Download Mod Engine 2
-- Place the DLL of your choosing in your mod directory. Should look like "...\Mod Engine 2\mod\1-Stat-Everything.dll"
-- Open "config_eldenring.toml". inside "external_dlls = []" add "mod/NAME_OF_DLL.dll". Example: "external_dlls = [ "mod/1-Health.dll" ]"
+### Via Mod Engine 2 (Recommended)
+1. Ensure you have [Mod Engine 2](https://github.com/soulsmods/ModEngine2) set up.
+2. Copy `FragileTarnished.dll` into your Mod Engine `mods` folder.
+3. Add the following line to your configuration `config_eldenring.toml`:
+   ```toml
+   external_dlls = [ "mod/FragileTarnished.dll" ]
+   ```
 
-## Technical
-- AOB scan → worldChrMan → 0x10EF8 → 0x190 → player
-- HP:      0x138/0x144  
-- FP:      0x148/0x150
-- Stamina: 0x154/0x15C
+## Technical Details
+- Signature Scanning (AOB)
+   Unlike simple trainers that use hardcoded memory addresses (which break every time the game updates), this mod uses Pattern Scanning. It searches the game's memory for a specific "signature" (Array of Bytes) to locate WorldChrMan.
+   Pattern: `48 8B 05 ? ? ? ? 48 85 C0 74 0F 48 39 88`
 
-## Troubleshooting
-- crash? wrong game version
-- delete dll to disable
+- RIP-Relative Addressing: 
+   The mod automatically calculates the absolute address of the character manager by resolving the 32-bit relative offset found in the instruction.
 
-## Building
-- visual studio 2022
-- x64 release
-- link psapi.lib
+- Pointer Chain Traversal
+   The mod navigates through the game's internal class hierarchy to reach the Local Player's stat block. It follows a deep pointer chain to ensure it is always targeting the correct player instance:
+   `WorldChrMan → 0x10EF8 → 0x0 → 0x190 → 0x0 → Stat Offsets`
+   
+- Stat Forcing Logic
+   Once the player's stat block is located, the mod monitors and overrides three core attributes:
+   HP (Health): Current and Base Max HP are locked to 1.
+   MP (Mana): Current and Base Max MP are locked to 1.
+   SP (Stamina): Current and Base Max Stamina are locked to 1.
 
-MIT License - modify/distribute freely
-(no warranty - use at own risk)
-
-**try not to die to the tree sentinel**
+## Credits
+- Created by **RegularLunar**
+- Signatures, Pointers, etc by **[TGA](https://github.com/The-Grand-Archives/Elden-Ring-CT-TGA)**
