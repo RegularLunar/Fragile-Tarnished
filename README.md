@@ -65,8 +65,4 @@ The compiled `FragileTarnished.dll` will be located in the `build/Release` folde
 - Created by **RegularLunar**
 - Signatures, Pointers, etc by **[TGA](https://github.com/The-Grand-Archives/Elden-Ring-CT-TGA)**
 ---
-<div align="center">
-  
-  ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/regularlunar/Fragile-Tarnished/total?style=for-the-badge&logo=githubsponsors&logoSize=20&color=%23916cd9)
-  
-</div>
+
