@@ -1,6 +1,6 @@
 <div align="center">
 
-
+[![fragile-tarnished.png](https://i.postimg.cc/TYp05h7Y/fragile-tarnished.png)](https://postimg.cc/bsfkKYfK)
 # Fragile Tarnished
 
 ### A lightweight C++ DLL mod for Elden Ring that implements a very hard challenge mode.
