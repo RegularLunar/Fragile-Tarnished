@@ -5,11 +5,11 @@
 
 ### A lightweight C++ DLL mod for Elden Ring that implements a very hard challenge mode.
 
-[![GitHub release](https://img.shields.io/github/v/release/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=7c3aed&label=Latest)](https://github.com/RegularLunar/Fragile-Tarnished/releases)
-[![Downloads](https://img.shields.io/github/downloads/RegularLunar/Fragile-Tarnished/total?style=for-the-badge&color=0ea5e9&label=Downloads)](https://github.com/RegularLunar/Fragile-Tarnished/releases)
-[![Stars](https://img.shields.io/github/stars/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=f59e0b)](https://github.com/RegularLunar/Fragile-Tarnished)
-[![License](https://img.shields.io/github/license/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=10b981)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=6366f1)](https://github.com/RegularLunar/Fragile-Tarnished/commits)
+[![GitHub release](https://img.shields.io/github/v/release/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=7c3aed&label=Latest&v=2)](https://github.com/RegularLunar/Fragile-Tarnished/releases)
+[![Downloads](https://img.shields.io/github/downloads/RegularLunar/Fragile-Tarnished/total?style=for-the-badge&color=0ea5e9&label=Downloads&v=2)](https://github.com/RegularLunar/Fragile-Tarnished/releases)
+[![Stars](https://img.shields.io/github/stars/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=f59e0b&v=2)](https://github.com/RegularLunar/Fragile-Tarnished)
+[![License](https://img.shields.io/github/license/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=10b981&v=2)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/RegularLunar/Fragile-Tarnished?style=for-the-badge&color=6366f1&v=2)](https://github.com/RegularLunar/Fragile-Tarnished/commits)
 
 </div>
 
