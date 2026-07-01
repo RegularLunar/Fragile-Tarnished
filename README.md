@@ -16,7 +16,7 @@
 - 1 Stamina
 
 > [!NOTE]
-> You have to recompile the DLL to choose specifics. (e.g only 1 stamina). Currently its setup to set all 3 stats to 1. 
+> You have to recompile the DLL to choose specifics. (e.g only 1 stamina). Currently its setup to set all 3 stats to 1. See [Line 90](https://github.com/RegularLunar/Fragile-Tarnished/blob/3bc1df36be6303921cbf687e32a7161e7530ff01/dllmain.cpp#L90)
 
 ---
 
