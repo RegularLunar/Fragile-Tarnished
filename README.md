@@ -18,6 +18,9 @@
 > [!NOTE]
 > You have to recompile the DLL to choose specifics. (e.g only 1 stamina). Currently its setup to set all 3 stats to 1. See [Line 94](https://github.com/RegularLunar/Fragile-Tarnished/blob/6e2c5584ed48d46ef5cdad94a0c8705ef521420b/src/dllmain.cpp#L94)
 
+> [!CAUTION]
+> **Do not use this mod while playing online.** Elden Ring utilizes Easy Anti-Cheat (EAC). Modifying memory while connected to FromSoftware's servers will result in an account ban. Always play in **Offline Mode** with EAC disabled via [Mod Engine](https://github.com/garyttierney/me3) or a similar launcher. **I am not responsible for any harm to your account. You have been warned.**
+
 ---
 
 ### Building From Source
