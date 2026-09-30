@@ -91,8 +91,9 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
         uintptr_t statMod = ResolveChain(worldChrManAddress, statModOffsets);
 
         if (statMod != 0) {
-            //ForceStatToOne(statMod, Offsets::StatMod_CurrentHP, Offsets::StatMod_BaseMaxHP); // Health
-			//ForceStatToOne(statMod, Offsets::StatMod_CurrentMP, Offsets::StatMod_BaseMaxMP); // Mana
+			// Comment out the stat that you DONT want to be forced to 1
+            ForceStatToOne(statMod, Offsets::StatMod_CurrentHP, Offsets::StatMod_BaseMaxHP); // Health
+			ForceStatToOne(statMod, Offsets::StatMod_CurrentMP, Offsets::StatMod_BaseMaxMP); // Mana
 			ForceStatToOne(statMod, Offsets::StatMod_CurrentSP, Offsets::StatMod_BaseMaxSP); // Stamina
         }
 
