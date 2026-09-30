@@ -22,14 +22,14 @@
 
 ### Building From Source
 
-- **Visual Studio 2022**,- **CMake 3.16** or higher
-- **Windows SDK**
+- **[Visual Studio](https://visualstudio.microsoft.com/) 2022 or higher**
+- **[premake5](https://premake.github.io/)**
+- **[Windows SDK](https://learn.microsoft.com/en-us/windows/apps/windows-sdk/downloads)**
 
 ```bash
 git clone https://github.com/RegularLunar/Fragile-Tarnished.git
 cd Fragile-Tarnished
-cmake -B build -S . -A x64
-cmake --build build --config Release
+premake5 vs2022
 ```
 
 ---
